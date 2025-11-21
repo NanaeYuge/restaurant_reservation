@@ -1,0 +1,118 @@
+
+.register-wrap {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 24px 12px;
+    background: #f3f4f6;
+}
+
+.reg-card {
+    margin-top: 15vh;
+    width: 100%;
+    max-width: 460px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
+    display: flex;
+    flex-direction: column;
+}
+
+.reg-head {
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    padding: 0 16px;
+    background: #2f6cf6;
+    color: #fff;
+    font-weight: 400;
+}
+
+.reg-body {
+    padding: 20px 30px;
+}
+
+.page-title {
+    display: none !important;
+}
+
+.field {
+    margin-bottom: 12px;
+}
+
+.reg-card .ctrl {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px solid #9ca3af;
+}
+
+.reg-card .icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.reg-card .input,
+.reg-card input[type="text"],
+.reg-card input[type="email"],
+.reg-card input[type="password"] {
+    flex: 1;
+    border: none;
+    border-bottom: none;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 4px 0;
+    color: #111827;
+}
+
+.reg-card .input::placeholder {
+    color: #6b7280;
+}
+
+.reg-card .error {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #dc2626;
+}
+
+.reg-actions {
+    margin-top: 18px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.reg-card .btn {
+    border-radius: 2px;
+    box-shadow: 0 8px 16px rgba(17, 24, 39, .15), 0 2px 6px rgba(17, 24, 39, .10);
+    font-weight: 400;
+    padding: 6px 22px;
+    border: none;
+    cursor: pointer;
+}
+
+.reg-card .btn.primary {
+    background: #2f6cf6;
+    color: #fff;
+}
+
+.reg-card .btn.primary:hover {
+    filter: brightness(.98);
+}
+
+@media (max-width: 640px) {
+    .reg-card {
+        margin-top: 4vh;
+        width: 92vw;
+    }
+
+    .reg-body {
+        padding: 14px 16px;
+    }
+}

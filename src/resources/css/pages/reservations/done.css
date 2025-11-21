@@ -1,0 +1,88 @@
+:root {
+    --blue: #2f6cf6
+}
+
+.result {
+    min-height: 60vh;
+    display: grid;
+    place-items: center
+}
+
+.card {
+    width: min(520px, 92%);
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .12);
+    padding: 36px 28px;
+    text-align: center
+}
+
+.msg {
+    margin: 0 0 18px;
+    font-size: 22px;
+    line-height: 1.6;
+    font-weight: 400
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    padding: 0 18px;
+    border-radius: 6px;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 400
+}
+
+.btn.primary {
+    background: var(--blue);
+    color: #fff;
+    box-shadow: 0 8px 22px rgba(47, 108, 246, .28)
+}
+
+@media(max-width:768px) {
+    .card {
+        width: min(560px, 94%);
+        padding: 28px 22px
+    }
+
+    .msg {
+        font-size: 20px
+    }
+
+    .btn {
+        height: 36px;
+        padding: 0 16px
+    }
+}
+
+@media(max-width:480px) {
+    .result {
+        min-height: auto;
+        padding: 24px 0
+    }
+
+    .card {
+        width: 92%;
+        padding: 24px 16px;
+        border-radius: 10px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, .10)
+    }
+
+    .msg {
+        font-size: 18px;
+        line-height: 1.5
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 320px;
+        height: 40px;
+        padding: 0 14px;
+        border-radius: 8px;
+        font-size: 15px
+    }
+}

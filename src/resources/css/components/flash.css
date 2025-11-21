@@ -1,0 +1,48 @@
+.flash {
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin: 10px 0;
+    border: 1px solid transparent;
+}
+
+.flash--success {
+    background: #d1fae5;
+    color: #065f46;
+    border-color: #a7f3d0;
+}
+
+.flash--info {
+    background: #eef2ff;
+    color: #3730a3;
+    border-color: #c7d2fe;
+}
+
+.flash--warn {
+    background: #fef3c7;
+    color: #92400e;
+    border-color: #fde68a;
+}
+
+.flash--error {
+    background: #fee2e2;
+    color: #991b1b;
+    border-color: #fecaca;
+}
+
+.alert {
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin: 10px 0;
+}
+
+.alert.status {
+    background: #eef2ff;
+    color: #3730a3;
+    border: 1px solid #c7d2fe;
+}
+
+.alert.error {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
