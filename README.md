@@ -25,7 +25,7 @@
 ## 🖥 使用技術
 
 - 言語: PHP
-- フレームワーク: Laravel 8.x
+- フレームワーク: Laravel 10.x
 - データベース: MySQL
 - 認証: Laravel Fortify / メール認証
 - 決済: Stripe（Checkout）
