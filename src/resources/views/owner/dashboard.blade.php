@@ -1,10 +1,6 @@
 @extends('layouts.app')
 @section('title','店舗代表者ページ')
 
-@section('head')
-    @vite(['resources/css/pages/owner/dashboard.css'])
-@endsection
-
 @section('content')
 <div class="owner-wrap">
     <div class="owner-header">
