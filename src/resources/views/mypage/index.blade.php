@@ -1,9 +1,7 @@
 @extends('layouts.app')
 @section('title','マイページ')
 
-@section('head')
-<link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
-@endsection
+
 
 @section('content')
 @php

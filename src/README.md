@@ -1,66 +1,197 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Rese（リーズ） README
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 🚀 アプリケーション名
+**Rese（リーズ）**
+企業グループ運営の飲食店予約サービス（飲食店予約アプリの模擬案件）
 
-## About Laravel
+## 🎯 作成した目的
+外部の飲食店予約サービスは手数料が発生するため、
+自社で予約サービスを保有し、コストを最適化することを目的としています。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- 初年度ユーザー数：10,000人を目標
+- 設計〜コーディング〜テストまでを一人で担当
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🌐 アプリケーションURL
+（デプロイしていれば記載）
 
-## Learning Laravel
+例）
+- 開発環境: `http://localhost`
+- ログイン情報: （必要であればここに記載）
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🖥 使用技術
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- 言語: PHP
+- フレームワーク: Laravel 10.x
+- データベース: MySQL
+- 認証: Laravel Fortify / メール認証
+- 決済: Stripe（Checkout）
+- インフラ想定: AWS（EC2 / RDS / S3）
+- その他: Docker（開発環境）
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🧩 機能一覧
 
-### Premium Partners
+### 基本機能
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+- 会員登録
+- ログイン / ログアウト
+- ユーザー情報取得
+- 飲食店一覧取得
+- 飲食店詳細取得
+- お気に入り登録 / 解除
+- 予約作成
+- 予約削除
+- 検索機能
+  - エリアで検索
+  - ジャンルで検索
+  - 店名で検索
 
-## Contributing
+### 追加実装機能（Advance）
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- 予約変更機能（日時・人数をマイページから変更）
+- 来店後の店舗評価（5段階評価 + コメント）
+- レスポンシブデザイン（ブレイクポイント 768px）
+- 権限管理
+  - 利用者
+  - 店舗代表者
+  - 管理者
+- 店舗代表者用管理画面
+  - 店舗情報の作成・更新
+  - 自店舗の予約情報一覧・詳細
+- 管理者用画面
+  - 店舗代表者アカウントの作成
+- メール認証
+- 管理画面からのお知らせメール送信
+- リマインダーメール（予約当日の朝に自動送信）
+- QRコード発行・照合（来店時に店舗側が確認）
+- Stripe による決済
+- 画像ストレージ（S3 利用を想定）
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 📄 画面一覧
 
-## Security Vulnerabilities
+### 一般ユーザー用画面一覧
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+| パス | 画面名 | 説明 |
+|------|--------|------|
+| `/` | 飲食店一覧ページ | 全店舗の一覧を表示するトップページ。エリア・ジャンル・店名で検索可能。 |
+| `/detail/{shop}` | 飲食店詳細ページ | 選択した店舗の詳細情報・評価・予約フォームを表示。 |
+| `/register` | 会員登録ページ | 新規ユーザー登録フォーム。登録後にメール認証を行う。 |
+| `/thanks` | 会員登録サンクスページ | 会員登録完了後に表示される完了メッセージ画面。 |
+| `/login` | ログインページ | 一般ユーザー／管理者共通のログイン画面。 |
+| `/mypage` | マイページ | 自分の予約一覧・お気に入り一覧・予約変更リンクなどを表示。 |
+| `/reservations` | 予約一覧ページ | ログインユーザー自身の予約一覧を表示。 |
+| `/reservations/{reservation}/edit` | 予約変更ページ | 予約日時・人数の変更フォーム。 |
+| `/reservations/{reservation}/qr` | 予約QRコード表示ページ | 店舗側に提示するチェックイン用QRコードを表示。 |
+| `/done` | 予約完了ページ | 予約完了後に表示される完了メッセージ画面。 |
+| `/shops/{shop}/rate` | 評価入力ページ | 来店後に店舗への評価（スコア・コメント）を投稿する画面。 |
+| `/shops/{shop}/ratings` | 評価一覧ページ | その店舗に対する全ユーザーの評価一覧を表示。 |
+| `/payments/success` | 決済成功ページ | Stripe決済成功後に表示されるページ。 |
+| `/payments/cancel` | 決済キャンセルページ | Stripe決済をキャンセルした場合に表示されるページ。 |
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 店舗代表者用画面一覧
+
+| パス | 画面名 | 説明 |
+|------|--------|------|
+| `/staff/login` | 店舗代表者ログインページ | 店舗代表者 / スタッフがログインするための専用ログイン画面。 |
+| `/staff/dashboard` | 店舗代表者ダッシュボード | ログイン後のダッシュボード。担当店舗一覧を表示（`owner.dashboard` ビューを使用）。 |
+| `/owner/dashboard` | 店舗代表者ダッシュボード（オーナー用） | オーナーロール向けダッシュボード。担当店舗や予約状況の概要を表示。 |
+| `/owner/shop` | 店舗情報作成・編集ページ | 店舗名・エリア・ジャンル・説明文・画像などを登録 / 更新する画面。 |
+| `/owner/reservations` | 予約一覧ページ | 自店舗に紐づく全予約の一覧を表示。日付・時間・人数・利用者名などを確認可能。 |
+
+---
+
+### 管理者用画面一覧
+
+| パス | 画面名 | 説明 |
+|------|--------|------|
+| `/admin/dashboard` | 管理者ダッシュボード | 管理者ログイン後のトップページ。システム全体の状況や各管理機能への導線を表示。 |
+| `/admin/owners/create` | 店舗代表者作成ページ | 新規店舗代表者アカウントを作成するフォーム。 |
+| `/admin/owners/{owner}/edit` | 店舗代表者編集ページ | 既存店舗代表者アカウントの編集用フォーム。 |
+
+> 管理者ログイン自体は `/login` から行い、`role:admin` を持つユーザーのみ `/admin/*` ページへアクセス可能です。
+
+
+---
+
+## 🔧 環境構築手順
+
+```bash
+git clone git@github.com:NanaeYuge/restaurant_reservation.git
+cd restaurant_reservation
+
+cd src
+composer install
+npm install
+
+cp .env.example .env
+php artisan key:generate
+
+php artisan migrate --seed
+npm run dev
+php artisan serve
+```
+
+## 💳 決済機能（Stripe）
+
+
+Stripe Checkout を利用してクレジットカード決済を行います。
+
+- 実装箇所（一部）
+  - `app/Http/Controllers/PaymentsController.php`
+  - `routes/web.php`（`/checkout` など）
+
+`.env` に以下のような Stripe のテストキーを設定して動作確認します。
+
+```env
+STRIPE_PUBLIC_KEY=pk_test_...
+STRIPE_SECRET_KEY=sk_test_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+```
+
+※ 上の ```env ブロックの中の `pk_test_...` / `sk_test_...` / `whsec_...` は、実際に使っている Stripe テストキーに書き換えてください。
+
+---
+
+## README 用：テスト用ログイン情報セクション
+
+実際に使っているメールアドレス・パスワードに書き換える前提で、テンプレを出すね👇
+
+## 🔑 テスト用ログイン情報
+
+動作確認用に、あらかじめ作成しているテストユーザーのログイン情報です。
+（※ メールアドレス・パスワードは、実際のシーディング内容に合わせて書き換えてください）
+
+### 管理者（Administrator）
+
+| 役割 | メールアドレス | パスワード |
+|------|----------------|------------|
+| 管理者 | admin@example.com | password12345 |
+
+### 店舗代表者（Shop Owner）
+
+| 役割 | メールアドレス | パスワード |
+|------|----------------|------------|
+| 店舗代表者1 | owner@example.com | password12345 |
+| 店舗代表者2(山田花子) | hanako@example.com | password |
+
+### 一般ユーザー（Customer）
+
+| 役割 | メールアドレス | パスワード |
+|------|----------------|------------|
+| 一般ユーザー1 | user1@example.com | password |
+| 一般ユーザー2 | user2@example.com | password |
+
+> 上記のアカウントは、Seeder などで作成したテストユーザーに対応させてください。
+> 実際の動作確認では、各役割のユーザーでログインし、画面・機能の違いを確認できます。
+
+
+
