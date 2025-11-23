@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 class Shop extends Model
 {
@@ -22,7 +23,7 @@ class Shop extends Model
 
     protected $casts = [
         'owner_id' => 'integer',
-        'area_id' => 'integer',
+        'area_id'  => 'integer',
         'genre_id' => 'integer',
     ];
 
@@ -57,10 +58,14 @@ class Shop extends Model
 
     public function getImageUrlAttribute(): string
     {
-        if ($this->image_path) {
-            return asset('storage/'.$this->image_path);
-        }
+        if (!empty($this->image_path)) {
 
+            if (Str::startsWith($this->image_path, ['http://', 'https://'])) {
+                return $this->image_path;
+            }
+
+            return asset('storage/' . ltrim($this->image_path, '/'));
+        }
         return asset('images/noimage.jpg');
     }
 }
